@@ -1,0 +1,31 @@
+<div>
+	<a href="/">Go to home page</a></br>
+	
+	Existing clubs: <br/>
+	
+	<form action="/clubs/remove/" method="post">
+	{% for c in clubs %}
+		<div>
+			<input type="checkbox" name="member" value="{{c.uri}}"/>
+			<b>{{c.clubShortName}}</b> {{c.clubName}}  
+		</div>
+	{% endfor %}
+	<div>
+		<input class = "button" type="submit" value="delete"/>
+	</div>
+	
+	</form>
+	
+	<form action="/clubs/new/" method="post">
+	<label for="clubName">Club Name: </label>
+	<input id="clubName" type="text" name="clubName"/> <br/>
+	
+	<label for="clubShortName">Short Name: </label>
+	<input id="clubShortName" type="text" name="clubShortName"/> <br/>
+		
+	<p>
+		<input class="button" type="submit" value="register"/>
+	</p>
+</form>
+	
+</div>

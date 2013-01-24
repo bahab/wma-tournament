@@ -1,0 +1,31 @@
+<div>
+	<a href="/"> Go to home page</a><br/>
+	
+	Existing players: <br/>
+	
+	<form action="/players/remove/" method="post">
+		{% for p in players %}
+			<div>
+				<input type="checkbox" name="member" value="{{p.uri}}"/> &nbsc;
+				<b>Family Name:</b> {{p.familyName}}<br/>
+				<b>Given Name:</b> {{p.givenName}}
+			</div>
+		{% endfor %}
+		
+		<div>
+			<input class = "button" type="submit" value="delete"/>
+		</div>
+	</form>
+	
+	<form action="/players/new/" method="post">
+		<label for="givenName">Given Name: </label>
+		<input id="givenName" type="text"/> <br/>
+		
+		<label for="familyName">famliy Name: </label>
+		<input id="familyName" type="text"/> <br/>
+		
+		<p>
+			<input class="button" type="submit" value="Register Player"/>
+		</p>
+	</form>
+</div>
