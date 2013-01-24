@@ -3,26 +3,25 @@
 	
 	Existing players: <br/>
 	
-	<form action="/players/remove/" method="post">
+	<form action="/players/" method="delete">
 		{% for p in players %}
 			<div>
-				<input type="checkbox" name="member" value="{{p.uri}}"/> &nbsc;
-				<b>Family Name:</b> {{p.familyName}}<br/>
-				<b>Given Name:</b> {{p.givenName}}
+				<input type="checkbox" name="member" value="{{p.uri}}"/> 
+				<b>{{p.familyName}}</b>	{{p.givenName}}
 			</div>
 		{% endfor %}
 		
 		<div>
-			<input class = "button" type="submit" value="delete"/>
+			<input class = "button" type="submit" value="Remove"/>
 		</div>
 	</form>
 	
-	<form action="/players/new/" method="post">
+	<form action="/players/" method="post">
 		<label for="givenName">Given Name: </label>
-		<input id="givenName" type="text"/> <br/>
+		<input id="givenName" type="text" name="givenName"/> <br/>
 		
 		<label for="familyName">famliy Name: </label>
-		<input id="familyName" type="text"/> <br/>
+		<input id="familyName" type="text" name="familyName"/> <br/>
 		
 		<p>
 			<input class="button" type="submit" value="Register Player"/>
